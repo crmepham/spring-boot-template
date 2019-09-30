@@ -1,0 +1,31 @@
+logging:
+  path: /var/log
+  file: frontend.log
+  level:
+    org.slf4j: 'DEBUG'
+    com.server: 'DEBUG'
+
+backend:
+  uri: http://localhost:3334/
+
+spring:
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
+
+server:
+  compression:
+    enabled: true
+    mime-types: application/json,application/xml,text/html,text/xml,text/plain
+  port: 3333
+  http2:
+    enabled: true
+  ssl:
+    enabled: false
+    key-store: /etc/letsencrypt/live/domain.com/keystore.p12
+    key-store-password: password
+    key-store-type: PKCS12
+    key-alias: alias
+
+app:
+  quartz:
+    enabled: false

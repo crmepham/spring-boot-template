@@ -1,0 +1,33 @@
+logging:
+  path: /var/log
+  file: backend.log
+  level:
+    org.slf4j: 'DEBUG'
+    com.server: 'DEBUG'
+
+spring:
+  jpa:
+    database: MYSQL
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    locations: classpath:/db/migration
+    check-location: false
+  datasource:
+    url: jdbc:mysql://localhost:3306/template
+    username: template
+    password: template
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+server:
+  port: 3334
+  http2:
+    enabled: false
+  ssl:
+    enabled: false
+
+app:
+  quartz:
+    enabled: false
+  password:
+    salt: changethis
