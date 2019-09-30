@@ -4,7 +4,7 @@ A template repository consisting of a fully-functioning Spring Boot 2 applicatio
 ## What setup has been done?
 
 ### Initial user
-User with the username `admin` and password `admin` has been created. This user has the role `ROLE_ADMIN` which itself has the privileges `PRIVILEGE_WRITE` and `PRIVELEGE_READ`. Use this user to initially login to the application.
+A user with the username `admin` and password `admin` has been created. This user has the role `ROLE_ADMIN` which itself has the privileges `PRIVILEGE_WRITE` and `PRIVELEGE_READ`. Use this user to initially login to the application.
 
 ### Database setup and migration
 Database configuration is defined in the `application.yml` file in the `backend` application. It initially expects the database `template`, user `template` and password `template` to have been created. Database migration is performed using `Flyway`. The migration scripts must be created in the backend application `resources/db/migration` directory.
