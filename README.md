@@ -15,3 +15,7 @@ Database configuration is defined in the `application.yml` file in the `backend`
 3. Flyway
 4. MySQL
 5. Lombok 
+
+## Getting started
+1. Navigate to `http://localhost:3333`.
+2. Login with username `admin` and password `admin`.
