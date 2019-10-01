@@ -11,10 +11,10 @@ create table user (
 	visible tinyint(1) default 1,
 	primary key (id),
 	unique(username)
-) engine=InnoDB default charset=utf8;
+) engine=innodb default charset=utf8;
 
-CREATE INDEX user_username ON `user` (username);
-CREATE INDEX user_password ON `user` (password);
+create index user_username on `user` (username);
+create index user_password on `user` (password);
 
 create table role (
     id bigint(10) unsigned not null auto_increment,
@@ -23,9 +23,9 @@ create table role (
     last_updated datetime default now(),
     primary key (id),
     unique(name)
-) engine=InnoDB default charset=utf8;
+) engine=innodb default charset=utf8;
 
-CREATE INDEX role_name ON `role` (name);
+create index role_name on `role` (name);
 
 create table privilege (
     id bigint(10) unsigned not null auto_increment,
@@ -34,9 +34,9 @@ create table privilege (
     last_updated datetime default now(),
     primary key (id),
     unique(name)
-) engine=InnoDB default charset=utf8;
+) engine=innodb default charset=utf8;
 
-CREATE INDEX privilege_name ON `privilege` (name);
+create index privilege_name on `privilege` (name);
 
 create table user_role (
 	id bigint(10) unsigned not null auto_increment,
@@ -44,9 +44,9 @@ create table user_role (
 	role_id bigint(10) unsigned not null,
 	primary key (id),
 	unique(user_id, role_id)
-) engine=InnoDB default charset=utf8;
+) engine=innodb default charset=utf8;
 
-CREATE INDEX user_role ON `user_role` (user_id, role_id);
+create index user_role on `user_role` (user_id, role_id);
 
 create table role_privilege (
 	id bigint(10) unsigned not null auto_increment,
@@ -54,17 +54,17 @@ create table role_privilege (
 	privilege_id bigint(10) unsigned not null,
 	primary key (id),
 	unique(role_id, privilege_id)
-) engine=InnoDB default charset=utf8;
+) engine=innodb default charset=utf8;
 
-CREATE INDEX role_privilege ON `role_privilege` (role_id, privilege_id);
+create index role_privilege on `role_privilege` (role_id, privilege_id);
 
-insert into user (username,password,enabled,visible) values ('admin','$2a$10$tsNJ8nCUFQKkUamQJiYvUeN0Gi.FgGh.SnSKk02rv9hSXBERmMQYm',1,1);
-insert into role (name) values ('ROLE_ADMIN'), ('ROLE_USER');
-insert into privilege (name) values ('PRIVILEGE_READ'), ('PRIVILEGE_WRITE');
+insert into user (username,password,enabled,visible) values ('admin','$2a$10$tsnj8ncufqkkuamqjiyvuen0gi.fggh.snskk02rv9hsxbermmqym',1,1);
+insert into role (name) values ('role_admin'), ('role_user');
+insert into privilege (name) values ('privilege_read'), ('privilege_write');
 
-set @userId = (select id from user where username = 'admin');
-set @roleId = (select id from role where name = 'ROLE_ADMIN');
-set @privilegeReadId = (select id from privilege where name = 'PRIVILEGE_READ');
-set @privilegeWriteId = (select id from privilege where name = 'PRIVILEGE_WRITE');
-insert into role_privilege (role_id,privilege_id) values (@roleId,@privilegeReadId), (@roleId,@privilegeWriteId);
-insert into user_role (user_id, role_id) values (@userId, @roleId);
+set @userid = (select id from user where username = 'admin');
+set @roleid = (select id from role where name = 'role_admin');
+set @privilegereadid = (select id from privilege where name = 'privilege_read');
+set @privilegewriteid = (select id from privilege where name = 'privilege_write');
+insert into role_privilege (role_id,privilege_id) values (@roleid,@privilegereadid), (@roleid,@privilegewriteid);
+insert into user_role (user_id, role_id) values (@userid, @roleid);
