@@ -58,7 +58,7 @@ create table role_privilege (
 
 create index role_privilege on `role_privilege` (role_id, privilege_id);
 
-insert into user (username,password,enabled,visible) values ('admin','$2a$10$tsnj8ncufqkkuamqjiyvuen0gi.fggh.snskk02rv9hsxbermmqym',1,1);
+insert into user (username,password,enabled,visible) values ('admin','$2a$10$dPqlSyivpW5PDEVmViV4/.ErSpJ4bkmCLaB7yc2fB0c.cqzm4OtI2',1,1);
 insert into role (name) values ('role_admin'), ('role_user');
 insert into privilege (name) values ('privilege_read'), ('privilege_write');
 
