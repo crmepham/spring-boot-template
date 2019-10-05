@@ -37,6 +37,8 @@
         <model.version>4.0.0</model.version>
         <h2.version>1.4.194</h2.version>
         <gson.version>2.8.5</gson.version>
+        <sass-plugin.version>2.22</sass-plugin.version>
+        <resource-bundler.version>1.0.5</resource-bundler.version>
     </properties>
 
     <dependencies>

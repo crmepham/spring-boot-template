@@ -31,11 +31,6 @@
             <artifactId>spring-boot-starter-security</artifactId>
             <version>${spring-boot.version}</version>
         </dependency>
-        <dependency>
-            <groupId>nl.geodienstencentrum.maven</groupId>
-            <artifactId>sass-maven-plugin</artifactId>
-            <version>2.22</version>
-        </dependency>
     </dependencies>
 
     <build>
@@ -43,7 +38,7 @@
             <plugin>
                 <groupId>com.github.crmepham</groupId>
                 <artifactId>resource-bundler-maven-plugin</artifactId>
-                <version>1.0.5</version>
+                <version>${resource-bundler.version}</version>
                 <executions>
                     <execution>
                         <phase>package</phase>
@@ -101,7 +96,7 @@
             <plugin>
                 <groupId>nl.geodienstencentrum.maven</groupId>
                 <artifactId>sass-maven-plugin</artifactId>
-                <version>2.22</version>
+                <version>${sass-plugin.version}</version>
                 <executions>
                     <execution>
                         <phase>compile</phase>
