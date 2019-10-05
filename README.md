@@ -9,6 +9,9 @@ A user with the username `admin` and password `admin` has been created. This use
 ### Database setup and migration
 Database configuration is defined in the `application.yml` file in the `backend` application. It initially expects the database `template`, user `template` and password `template` to have been created. Database migration is performed using `Flyway`. The migration scripts must be created in the backend application `resources/db/migration` directory.
 
+### Resource Bundler Maven plugin
+This plugin automatically minifies and bundles any `Javascript` and `CSS` files it finds under the `resources/static` directory. Learn more about it here: https://github.com/crmepham/resource-bundler-maven-plugin.
+
 ## Technologies
 1. Spring Boot 2.1.8.RELEASE
 2. Java 12
