@@ -24,3 +24,5 @@ hs_err_pid*
 .idea
 *.iml
 *.gz
+*-bundle.css
+*-bundle.js

@@ -11,6 +11,10 @@
 
     <artifactId>frontend</artifactId>
 
+    <properties>
+        <spring.boot.mainclass>com.github.crmepham.Frontend</spring.boot.mainclass>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -32,14 +36,29 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>com.github.crmepham</groupId>
+                <artifactId>resource-bundler-maven-plugin</artifactId>
+                <version>1.0.5</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>bundle</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
                     <executable>true</executable>
+                    <mainClass>${spring.boot.mainclass}</mainClass>
                 </configuration>
                 <executions>
                     <execution>
+                        <phase>package</phase>
                         <goals>
                             <goal>repackage</goal>
                         </goals>
@@ -54,6 +73,12 @@
                     <source>12</source>
                     <target>12</target>
                 </configuration>
+                <executions>
+                    <execution>
+                        <id>default-compile</id>
+                        <phase>none</phase>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
