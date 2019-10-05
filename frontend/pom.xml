@@ -31,6 +31,11 @@
             <artifactId>spring-boot-starter-security</artifactId>
             <version>${spring-boot.version}</version>
         </dependency>
+        <dependency>
+            <groupId>nl.geodienstencentrum.maven</groupId>
+            <artifactId>sass-maven-plugin</artifactId>
+            <version>2.22</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -92,6 +97,35 @@
                         </manifest>
                     </archive>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>nl.geodienstencentrum.maven</groupId>
+                <artifactId>sass-maven-plugin</artifactId>
+                <version>2.22</version>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>update-stylesheets</goal>
+                        </goals>
+                        <configuration>
+                            <resources>
+                                <resource>
+                                    <source>
+                                        <directory>${project.basedir}/src/main/resources/sass</directory>
+                                        <includes>
+                                            <include>**/*.scss</include>
+                                        </includes>
+                                    </source>
+                                    <destination>${project.basedir}/src/main/resources/static/css/sass</destination>
+                                </resource>
+                            </resources>
+                            <sassOptions>
+                                <style>:compressed</style>
+                            </sassOptions>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
