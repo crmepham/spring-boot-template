@@ -9,6 +9,9 @@ A user with the username `admin` and password `admin` has been created. This use
 ### Database setup and migration
 Database configuration is defined in the `application.yml` file in the `backend` application. It initially expects the database `template`, user `template` and password `template` to have been created. Database migration is performed using `Flyway`. The migration scripts must be created in the backend application `resources/db/migration` directory.
 
+### SASS Maven plugin
+Create your `.scss` files under directory `resources/sass`. When you next package the project the SASS files will be converted to `CSS` and placed in the `resources/static/sass` directory. The Resource Bundler maven plugin will then take care of minifying and bundling these converted CSS files. You can configure the source and target directories by changing the relevant configuration property values in the frontend `pom.xml`.
+
 ### Resource Bundler Maven plugin
 This plugin automatically minifies and bundles any `Javascript` and `CSS` files it finds under the `resources/static` directory. Learn more about it here: https://github.com/crmepham/resource-bundler-maven-plugin.
 
@@ -17,7 +20,8 @@ This plugin automatically minifies and bundles any `Javascript` and `CSS` files 
 2. Java 12
 3. Flyway
 4. MySQL
-5. Lombok 
+5. Lombok
+6. SASS
 
 ## Getting started
 1. Navigate to `http://localhost:3333`.
