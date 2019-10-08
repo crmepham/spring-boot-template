@@ -24,5 +24,7 @@ This plugin automatically minifies and bundles any `Javascript` and `CSS` files 
 6. SASS
 
 ## Getting started
-1. Navigate to `http://localhost:3333`.
-2. Login with username `admin` and password `admin`.
+1. Run up the backend service.
+2. Run up the frontend service.
+3. Navigate to `http://localhost:3333`.
+4. Login with username `admin` and password `admin`.
