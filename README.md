@@ -22,6 +22,7 @@ This plugin automatically minifies and bundles any `Javascript` and `CSS` files 
 4. MySQL
 5. Lombok
 6. SASS
+7. Freemarker
 
 ## Getting started
 1. Create the database `template`.
