@@ -24,7 +24,9 @@ This plugin automatically minifies and bundles any `Javascript` and `CSS` files 
 6. SASS
 
 ## Getting started
-1. Run up the backend service.
-2. Run up the frontend service.
-3. Navigate to `http://localhost:3333`.
-4. Login with username `admin` and password `admin`.
+1. Create the database `template`.
+2. Create the database user `template` with password `template`.
+3. Run up the backend service.
+4. Run up the frontend service.
+5. Navigate to `http://localhost:3333`.
+6. Login with username `admin` and password `admin`.
