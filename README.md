@@ -23,6 +23,7 @@ This plugin automatically minifies and bundles any `Javascript` and `CSS` files 
 5. Lombok
 6. SASS
 7. Freemarker
+8. Checktyle
 
 ## Getting started
 1. Create the database `template`.
