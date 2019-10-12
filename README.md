@@ -24,6 +24,8 @@ This plugin automatically minifies and bundles any `Javascript` and `CSS` files 
 6. SASS
 7. Freemarker
 8. Checkstyle
+9. Spotbugs
+10. PMD
 
 ## Getting started
 1. Create the database `template`.
