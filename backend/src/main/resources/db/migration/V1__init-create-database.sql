@@ -2,13 +2,13 @@ create table user (
 	id bigint(10) unsigned not null auto_increment,
 	username varchar(50) not null,
 	password varchar(200) not null,
-	account_non_expired tinyint(1) default 1,
-	account_non_locked tinyint(1) default 1,
-	credentials_non_expired tinyint(1) default 1,
-	enabled tinyint(1) default 0,
+	account_non_expired bit default 1,
+	account_non_locked bit default 1,
+	credentials_non_expired bit default 1,
+	enabled bit default 0,
 	created datetime default now(),
 	last_updated datetime default now(),
-	visible tinyint(1) default 1,
+	visible bit default 1,
 	primary key (id),
 	unique(username)
 ) engine=innodb default charset=utf8;

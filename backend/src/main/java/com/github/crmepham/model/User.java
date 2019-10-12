@@ -6,7 +6,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import lombok.EqualsAndHashCode;
@@ -44,7 +43,6 @@ public class User extends BaseEntity {
     @Column(name = "visible", columnDefinition = "bit default 1", nullable = false)
     private boolean visible;
 
-    @ManyToMany
     @JoinTable(
         name = "user_role", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
         inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))

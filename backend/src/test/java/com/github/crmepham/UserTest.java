@@ -45,7 +45,7 @@ public class UserTest {
         user.setPassword("password");
 
         List<Role> roles = new ArrayList<>();
-        roles.add(roleRepository.findByName("ROLE_ADMIN"));
+        roles.add(roleRepository.findByName("role_admin"));
         user.setRoles(roles);
     }
 
@@ -69,12 +69,18 @@ public class UserTest {
         assertThat(result.getRoles().size()).isEqualTo(1);
         assertThat(result.getRoles().iterator().next().getPrivileges().size()).isEqualTo(2);
 
-        result.getRoles().iterator().next().getPrivileges().removeIf(p -> p.getName().equals("PRIVILEGE_READ"));
+        result.getRoles().iterator().next().getPrivileges().removeIf(p -> p.getName().equals("privilege_read"));
         userRepository.save(result);
 
         val updated = userRepository.findByUsername("username");
         assertThat(updated.getRoles().iterator().next().getPrivileges().size()).isEqualTo(1);
 
         assertThat(privilegeRepository.findAll().size()).isEqualTo(2);
+    }
+
+    @Test
+    public void testRoleRepository() {
+        val results = roleRepository.findAll();
+        assertThat(results.size()).isEqualTo(2);
     }
 }
