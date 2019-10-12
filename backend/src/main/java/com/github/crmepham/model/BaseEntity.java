@@ -12,6 +12,9 @@ import javax.persistence.MappedSuperclass;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * Shared fields of persistence entities.
+ */
 @Getter
 @Setter
 @MappedSuperclass

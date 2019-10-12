@@ -10,6 +10,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.github.crmepham.service.UserDetailsServiceImpl;
 
+/**
+ * Web security configuration only.
+ */
 @Configuration
 public class WebSecurity extends WebSecurityConfigurerAdapter {
 

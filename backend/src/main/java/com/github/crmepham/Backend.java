@@ -4,6 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
+/**
+ * Main access to the backend application.
+ */
 @EntityScan("com.github.crmepham")
 @SpringBootApplication
 public class Backend {

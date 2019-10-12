@@ -5,5 +5,8 @@ import org.springframework.stereotype.Repository;
 
 import com.github.crmepham.model.Privilege;
 
+/**
+ * A simple JPA repository to provide CRUD access to the {@link Privilege} entity.
+ */
 @Repository
 public interface IPrivilegeRepository extends JpaRepository<Privilege, Long> {}

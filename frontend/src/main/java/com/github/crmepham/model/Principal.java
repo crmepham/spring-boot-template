@@ -9,6 +9,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * Holds a reference to the user that has logged in.
+ */
 @Getter
 @Setter
 @AllArgsConstructor
@@ -17,44 +20,37 @@ public class Principal implements UserDetails {
     private final User user;
 
     @Override
-    public Collection<? extends GrantedAuthority> getAuthorities()
-    {
+    public Collection<? extends GrantedAuthority> getAuthorities() {
         return user.getRoles();
     }
 
     @Override
-    public String getPassword()
-    {
+    public String getPassword() {
         return user.getPassword();
     }
 
     @Override
-    public String getUsername()
-    {
+    public String getUsername() {
         return user.getUsername();
     }
 
     @Override
-    public boolean isAccountNonExpired()
-    {
+    public boolean isAccountNonExpired() {
         return user.isAccountNonExpired();
     }
 
     @Override
-    public boolean isAccountNonLocked()
-    {
+    public boolean isAccountNonLocked() {
         return user.isAccountNonLocked();
     }
 
     @Override
-    public boolean isCredentialsNonExpired()
-    {
+    public boolean isCredentialsNonExpired() {
         return user.isCredentialsNonExpired();
     }
 
     @Override
-    public boolean isEnabled()
-    {
+    public boolean isEnabled() {
         return user.isEnabled();
     }
 }

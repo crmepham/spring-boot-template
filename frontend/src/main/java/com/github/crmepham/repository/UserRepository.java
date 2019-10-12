@@ -9,6 +9,9 @@ import org.springframework.web.client.RestTemplate;
 
 import com.github.crmepham.model.User;
 
+/**
+ * The user repository.
+ */
 @Repository
 public class UserRepository extends BaseRepository {
 

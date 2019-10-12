@@ -14,9 +14,13 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * Encapsulates a user role. A user role may have many roles.
+ * Roles are used to restrict access of features to certain users.
+ */
 @Getter
 @Setter
-@EqualsAndHashCode(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "role")
 public class Role extends BaseEntity {

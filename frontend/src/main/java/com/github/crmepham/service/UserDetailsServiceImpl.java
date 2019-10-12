@@ -10,6 +10,11 @@ import com.github.crmepham.model.Principal;
 import com.github.crmepham.repository.UserRepository;
 import lombok.val;
 
+/**
+ * Custom logic to retrieve user details which will be
+ * used to determine if the user entered the correct
+ * login credentials.
+ */
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 

@@ -12,9 +12,13 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * Encapsulates a single user role privilege. There
+ * may be multiple privileges per user role.
+ */
 @Getter
 @Setter
-@EqualsAndHashCode(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "privilege")
 public class Privilege extends BaseEntity {

@@ -8,6 +8,10 @@ import com.google.gson.Gson;
 import lombok.Getter;
 import lombok.val;
 
+/**
+ * Contains basic, shared functionality that most respository
+ * implementations will use.
+ */
 @Getter
 public abstract class BaseRepository {
 

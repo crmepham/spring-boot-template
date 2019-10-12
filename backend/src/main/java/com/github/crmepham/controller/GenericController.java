@@ -9,13 +9,21 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.github.crmepham.model.BaseEntity;
 import com.google.gson.Gson;
+import lombok.Getter;
 import lombok.val;
 
+/**
+ * Generic controller used to perform similar generic CRUD
+ * operations for various entities.
+ * @param <T> The persistant entity.
+ * @param <ID> The Type of the JPA entity id field.
+ */
 public abstract class GenericController<T, ID extends Serializable> {
 
-    static Gson GSON = new Gson();
+    @Getter
+    private static Gson GSON = new Gson();
 
-    JpaRepository<T, ID> r;
+    private JpaRepository<T, ID> r;
 
     public GenericController(JpaRepository<T, ID> r) {
         this.r = r;

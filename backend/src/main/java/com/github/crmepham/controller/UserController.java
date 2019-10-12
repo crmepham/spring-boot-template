@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.github.crmepham.model.User;
 import com.github.crmepham.repository.IUserRepository;
 
+/**
+ * A RESTful controller that serves requests related to a {@link User}.
+ */
 @RestController
 @RequestMapping("user")
 public class UserController extends GenericController<User, Long> {
@@ -31,11 +34,11 @@ public class UserController extends GenericController<User, Long> {
 
     @PostMapping
     public User create(@RequestBody String payload) {
-        return create(GSON.fromJson(payload, User.class));
+        return create(getGSON().fromJson(payload, User.class));
     }
 
     @PutMapping
     public User update(@RequestBody String payload) {
-        return update(GSON.fromJson(payload, User.class));
+        return update(getGSON().fromJson(payload, User.class));
     }
 }
