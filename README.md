@@ -22,7 +22,12 @@ This plugin automatically minifies and bundles any `Javascript` and `CSS` files 
 4. MySQL
 5. Lombok
 6. SASS
+7. Freemarker
 
 ## Getting started
-1. Navigate to `http://localhost:3333`.
-2. Login with username `admin` and password `admin`.
+1. Create the database `template`.
+2. Create the database user `template` with password `template`.
+3. Run up the backend service.
+4. Run up the frontend service.
+5. Navigate to `http://localhost:3333`.
+6. Login with username `admin` and password `admin`.
