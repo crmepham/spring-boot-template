@@ -3,6 +3,7 @@ package com.github.crmepham.model;
 import java.util.Collection;
 
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -46,5 +47,6 @@ public class User extends BaseEntity {
     @JoinTable(
         name = "user_role", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
         inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
+    @ElementCollection(targetClass = Role.class)
     private Collection<Role> roles;
 }
