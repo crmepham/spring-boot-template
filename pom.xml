@@ -32,7 +32,7 @@
         <flyway.version>5.2.3</flyway.version>
         <lombok.version>1.18.10</lombok.version>
         <slf4j.version>1.7.24</slf4j.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
         <assertj.version>3.13.2</assertj.version>
         <model.version>4.0.0</model.version>
         <h2.version>1.4.194</h2.version>
